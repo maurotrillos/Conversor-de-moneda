@@ -1,4 +1,4 @@
-package com.maurotrillos.conversordemoneda.metodos;
+package com.maurotrillos.conversordemoneda.clientconversor;
 
 import com.google.gson.Gson;
 import com.maurotrillos.conversordemoneda.modelos.Moneda;
@@ -8,7 +8,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class TasaDeCambio {
+public class Conversor {
 
     public Moneda obtenerTasaDeCambio(String tipo){
         HttpClient client = HttpClient.newHttpClient();

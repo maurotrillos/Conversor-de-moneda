@@ -1,4 +1,6 @@
-package com.maurotrillos.conversordemoneda.modelos;
+package com.maurotrillos.conversordemoneda.metodos;
+
+import com.maurotrillos.conversordemoneda.modelos.Moneda;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -5,6 +5,11 @@ public class MonedaPar {
     private String target_code;
     private Double conversion_rate;
     private Double conversion_result;
+    private String time_last_update_utc;
+
+    public String getTime_last_update_utc() {
+        return time_last_update_utc.substring(4,16);
+    }
 
     public String getBase_code() {
         return base_code;
@@ -36,5 +41,13 @@ public class MonedaPar {
 
     public void setConversion_result(Double conversion_result) {
         this.conversion_result = conversion_result;
+    }
+
+    @Override
+    public String toString() {
+        return "Para la fecha (" + time_last_update_utc.substring(5,16)+
+                ") "+ "la tasa de cambio es de: \n" + "1.0 '" + base_code + "' por "
+                + conversion_rate + " '" + target_code + "' \n" +
+                "el total de su conversion es: "+conversion_result+" '"+target_code+"'";
     }
 }

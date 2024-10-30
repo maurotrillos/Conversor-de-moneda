@@ -1,14 +1,15 @@
 package com.maurotrillos.conversordemoneda.modelos;
 
-import java.util.Map;
-
-public class Moneda{
+public class Moneda {
     private String base_code;
-    private Map<String, Double> conversion_rates;
+    private String target_code;
+    private Double conversion_rate;
+    private Double conversion_result;
     private String time_last_update_utc;
 
+
     public String getTime_last_update_utc() {
-        return time_last_update_utc;
+        return time_last_update_utc.substring(4,16);
     }
 
     public String getBase_code() {
@@ -19,11 +20,36 @@ public class Moneda{
         this.base_code = base_code;
     }
 
-    public Map<String, Double> getConversion_rates() {
-        return conversion_rates;
+    public String getTarget_code() {
+        return target_code;
     }
 
-    public void setConversion_rates(Map<String, Double> conversion_rates) {
-        this.conversion_rates = conversion_rates;
+    public void setTarget_code(String target_code) {
+        this.target_code = target_code;
+    }
+
+    public Double getConversion_rate() {
+        return conversion_rate;
+    }
+
+    public void setConversion_rate(Double conversion_rate) {
+        this.conversion_rate = conversion_rate;
+    }
+
+    public Double getConversion_result() {
+        return conversion_result;
+    }
+
+    public void setConversion_result(Double conversion_result) {
+        this.conversion_result = conversion_result;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Para la fecha (" + time_last_update_utc.substring(5,16)+
+                ") "+ "la tasa de cambio es de: \n" + "1.0 '" + base_code + "' por "
+                + conversion_rate + " '" + target_code + "' \n" +
+                "el total de su conversion es de: "+conversion_result+" '"+target_code+"'";
     }
 }

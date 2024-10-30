@@ -1,20 +1,14 @@
 package com.maurotrillos.conversordemoneda.main;
 import com.maurotrillos.conversordemoneda.clientconversor.Conversor;
-import com.maurotrillos.conversordemoneda.clientconversor.ConversorPar;
-import com.maurotrillos.conversordemoneda.metodos.FiltroDeMoneda;
 import com.maurotrillos.conversordemoneda.modelos.Moneda;
-import com.maurotrillos.conversordemoneda.modelos.MonedaPar;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner lectura = new Scanner(System.in);
-        ConversorPar conversorPar = new ConversorPar();
-        boolean continuar = true;
         Conversor conversor = new Conversor();
-        Moneda moneda = conversor.obtenerTasaDeCambio("usd");
-        FiltroDeMoneda filtroDeMoneda = new FiltroDeMoneda();
+        boolean continuar = true;
         String menu = """
                 1) Dólar =>> Peso Argentino.
                 2) Peso Argentino =>> Dólar.
@@ -99,8 +93,8 @@ public class Main {
             }
 
             {
-                MonedaPar monedaPar = conversorPar.convertirPar(origen, destino, cant);
-                System.out.println(monedaPar.toString());
+                Moneda moneda = conversor.convertirPar(origen, destino, cant);
+                System.out.println(moneda.toString());
                 System.out.println(subMenu);
                 int continuarOpcion = lectura.nextInt();
                 if (continuarOpcion == 2) {

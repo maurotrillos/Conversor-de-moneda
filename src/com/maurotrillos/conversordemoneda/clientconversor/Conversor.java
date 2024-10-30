@@ -1,6 +1,8 @@
 package com.maurotrillos.conversordemoneda.clientconversor;
 
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.maurotrillos.conversordemoneda.modelos.Moneda;
 
 import java.net.URI;

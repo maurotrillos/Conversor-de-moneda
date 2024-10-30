@@ -7,6 +7,7 @@ public class MonedaPar {
     private Double conversion_result;
     private String time_last_update_utc;
 
+
     public String getTime_last_update_utc() {
         return time_last_update_utc.substring(4,16);
     }
@@ -43,11 +44,12 @@ public class MonedaPar {
         this.conversion_result = conversion_result;
     }
 
+
     @Override
     public String toString() {
         return "Para la fecha (" + time_last_update_utc.substring(5,16)+
                 ") "+ "la tasa de cambio es de: \n" + "1.0 '" + base_code + "' por "
                 + conversion_rate + " '" + target_code + "' \n" +
-                "el total de su conversion es: "+conversion_result+" '"+target_code+"'";
+                "el total de su conversion es de: "+conversion_result+" '"+target_code+"'";
     }
 }
